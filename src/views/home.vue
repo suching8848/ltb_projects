@@ -1,6 +1,9 @@
 <template>
   <div class="home-container">
     <h1>VUE教学</h1>
+    <nav class="navigation">
+      <router-link to="/new" class="nav-link">新组建集合</router-link>
+    </nav>
     <hr>
     <Mobanyufa></Mobanyufa>
     <Shuxingbangding></Shuxingbangding>
@@ -43,7 +46,7 @@ import BiaduanShujubanding from '../components/biaduanshujubanding.vue';
 import Mobanyinyong from '../components/mobanyinyong.vue';
 import Zujianshiantao from '../components/zujianshiantao.vue';
 import Zujianshijian from '../components/zujianshijian.vue';
-import ZujianshijianModel from '../components/zujianshijianModel.vue';
+import ZujianshijianModel from '../components/zujianshiModel.vue';
 import Chachaoslots from '../components/chachaoslots.vue';
 
 export default {
@@ -73,6 +76,8 @@ export default {
 
 <style scoped>
 .home-container {
+  position: relative;
+  z-index: 10;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -80,12 +85,32 @@ export default {
 
 h1 {
   text-align: center;
-  color: #333;
+  z-index: 11;
+  color: aqua;
   margin-bottom: 30px;
 }
 
 hr {
   margin: 30px 0;
   border: 1px solid #ddd;
+}
+
+.navigation {
+  margin: 20px 0;
+  z-index: 11;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 </style>

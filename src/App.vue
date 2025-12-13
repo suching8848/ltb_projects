@@ -1,10 +1,16 @@
-<script setup>
-import HomeNew from './views/homeNew.vue'
+<script>
+export default {
+  name: 'App'
+}
 </script>
 
 <template>
   <div id="app">
-    <HomeNew />
+    <div class="nav">
+      <router-link to="/">Home</router-link>
+      <router-link to="/new">New Page</router-link>
+    </div>
+    <router-view />
   </div>
 </template>
 
@@ -29,5 +35,20 @@ body {
   width: 100%;
   overflow-x: hidden;
   background-color: #000000;
+}
+
+.nav {
+  margin: 20px;
+}
+
+.nav a {
+  color: #42b983;
+  margin-right: 20px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
 }
 </style>
